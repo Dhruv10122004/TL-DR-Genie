@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TL;DR-Genie</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      padding: 20px;
+      min-width: 500px;
+      min-height: 350px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      background: #f0f8ff; /* very light sky blue */
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      color: #007acc; /* sky blue */
+      margin-bottom: 20px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #ffffff;
+      border: 2px solid #007acc;
+      border-radius: 6px;
+      outline: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #summarize {
+      background-color: #28a745; /* green */
+      color: white;
+    }
+
+    #summarize:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    #copy-btn {
+      background-color: #dc3545; /* red */
+      color: white;
+    }
+
+    #copy-btn:hover {
+      background-color: #c82333;
+      transform: scale(1.05);
+    }
+
+    #result {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      min-height: 150px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      font-size: 15px;
+      color: #333;
+    }
+
+    #result ul {
+      padding-left: 20px;
+    }
+
+    #result li {
+      margin-bottom: 10px;
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+    }
+
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #007acc;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>TL;DR-Genie</h2>
+
+    <div class="options">
+      <select id="summary-type">
+        <option value="brief">Brief</option>
+        <option value="detailed">Detailed</option>
+        <option value="bullets">Bullet Points</option>
+      </select>
+    </div>
+
+    <div class="buttons">
+      <button id="summarize">Summarize</button>
+      <button id="copy-btn">Copy</button>
+    </div>
+
+    <pre id="result">Select a type and click Summarize</pre>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
