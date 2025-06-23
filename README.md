@@ -43,8 +43,8 @@
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/tldr-genie.git
-cd tldr-genie
+git clone https://github.com/yourusername/TL-DR-Genie.git
+cd TL-DR-Genie
 
 ### 2. Set Up Your API Key
 
@@ -60,7 +60,7 @@ cd tldr-genie
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable **Developer mode** (toggle in the top-right corner)
 3. Click **Load unpacked**
-4. Select the `tldr-genie` folder you cloned  
+4. Select the `TLDR-Genie` folder you cloned  
    The extension icon should now appear in your toolbar!
 
 ---
