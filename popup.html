@@ -12,32 +12,73 @@
       box-sizing: border-box;
     }
 
+    :root {
+      /* Light theme colors */
+      --bg-gradient-start: #667eea;
+      --bg-gradient-end: #764ba2;
+      --container-bg: rgba(255, 255, 255, 0.95);
+      --text-primary: #333;
+      --text-secondary: #666;
+      --text-muted: #999;
+      --border-color: #e1e5e9;
+      --control-bg: rgba(255, 255, 255, 0.8);
+      --input-bg: white;
+      --result-bg: white;
+      --result-header-bg: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      --shadow-color: rgba(0, 0, 0, 0.15);
+      --scrollbar-track: #f1f1f1;
+      --scrollbar-thumb: #c1c1c1;
+      --scrollbar-thumb-hover: #a1a1a1;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme colors */
+      --bg-gradient-start: #1a1a2e;
+      --bg-gradient-end: #16213e;
+      --container-bg: rgba(30, 30, 50, 0.95);
+      --text-primary: #e0e0e0;
+      --text-secondary: #b0b0b0;
+      --text-muted: #808080;
+      --border-color: #404040;
+      --control-bg: rgba(40, 40, 60, 0.8);
+      --input-bg: #2a2a3a;
+      --result-bg: #2a2a3a;
+      --result-header-bg: linear-gradient(135deg, #3a3a4a, #2a2a3a);
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --scrollbar-track: #404040;
+      --scrollbar-thumb: #606060;
+      --scrollbar-thumb-hover: #707070;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      color: var(--text-primary);
       min-width: 480px;
       min-height: 650px;
       overflow: hidden;
+      transition: all 0.3s ease;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.95);
+      background: var(--container-bg);
       backdrop-filter: blur(20px);
       border-radius: 20px;
       margin: 12px;
       padding: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px var(--shadow-color);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       height: calc(100vh - 24px);
       display: flex;
       flex-direction: column;
+      transition: all 0.3s ease;
     }
 
     .header {
       text-align: center;
       margin-bottom: 16px;
       flex-shrink: 0;
+      position: relative;
     }
 
     .logo {
@@ -52,17 +93,79 @@
 
     .tagline {
       font-size: 14px;
-      color: #666;
+      color: var(--text-secondary);
       font-weight: 500;
     }
 
+    .theme-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 24px;
+      background: var(--border-color);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      padding: 2px;
+    }
+
+    .theme-toggle::before {
+      content: '☀️';
+      font-size: 14px;
+      position: absolute;
+      left: 4px;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-toggle::after {
+      content: '🌙';
+      font-size: 14px;
+      position: absolute;
+      right: 4px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-toggle .toggle-slider {
+      width: 16px;
+      height: 16px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    [data-theme="dark"] .theme-toggle {
+      background: #667eea;
+      border-color: #667eea;
+    }
+
+    [data-theme="dark"] .theme-toggle::before {
+      opacity: 0;
+    }
+
+    [data-theme="dark"] .theme-toggle::after {
+      opacity: 1;
+    }
+
+    [data-theme="dark"] .theme-toggle .toggle-slider {
+      transform: translateX(16px);
+      background: #1a1a2e;
+    }
+
     .controls {
-      background: rgba(255, 255, 255, 0.8);
+      background: var(--control-bg);
       border-radius: 16px;
       padding: 16px;
       margin-bottom: 16px;
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
       flex-shrink: 0;
+      transition: all 0.3s ease;
     }
 
     .control-group {
@@ -77,7 +180,7 @@
       display: block;
       font-size: 13px;
       font-weight: 600;
-      color: #555;
+      color: var(--text-secondary);
       margin-bottom: 8px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -88,12 +191,13 @@
       width: 100%;
       padding: 12px 16px;
       font-size: 14px;
-      background: white;
-      border: 2px solid #e1e5e9;
+      background: var(--input-bg);
+      border: 2px solid var(--border-color);
       border-radius: 12px;
       outline: none;
       transition: all 0.3s ease;
       font-weight: 500;
+      color: var(--text-primary);
     }
 
     select:focus {
@@ -126,11 +230,15 @@
       border: 2px solid #667eea;
     }
 
+    [data-theme="dark"] input[type="range"]::-webkit-slider-thumb {
+      background: var(--input-bg);
+    }
+
     .range-labels {
       display: flex;
       justify-content: space-between;
       font-size: 11px;
-      color: #666;
+      color: var(--text-secondary);
       margin-top: 4px;
     }
 
@@ -207,21 +315,20 @@
 
     .result-container {
       flex: 1;
-      background: white;
+      background: var(--result-bg);
       border-radius: 16px;
-      border: 2px solid #e1e5e9;
+      border: 2px solid var(--border-color);
       display: flex;
       flex-direction: column;
       min-height: 0;
-      /* Prevents flex overflow */
       overflow: hidden;
+      transition: all 0.3s ease;
     }
 
-
     .result-header {
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      background: var(--result-header-bg);
       padding: 10px 16px;
-      border-bottom: 1px solid #e1e5e9;
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -231,14 +338,14 @@
     .result-title {
       font-size: 12px;
       font-weight: 600;
-      color: #666;
+      color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .word-count {
       font-size: 11px;
-      color: #999;
+      color: var(--text-muted);
       font-weight: 500;
     }
 
@@ -248,16 +355,16 @@
       overflow-y: auto;
       font-size: 14px;
       line-height: 1.7;
-      color: #333;
+      color: var(--text-primary);
       white-space: pre-wrap;
       font-family: 'Inter', system-ui, sans-serif;
       min-height: 0;
+      transition: color 0.3s ease;
     }
-
 
     #result:empty:before {
       content: "Click 'Summarize' to generate a summary of the current page";
-      color: #999;
+      color: var(--text-muted);
       font-style: italic;
     }
 
@@ -288,7 +395,7 @@
     .loader {
       width: 40px;
       height: 40px;
-      border: 3px solid #f3f3f3;
+      border: 3px solid var(--border-color);
       border-top: 3px solid #667eea;
       border-radius: 50%;
       animation: spin 1s linear infinite;
@@ -296,7 +403,7 @@
 
     .loading-text {
       font-size: 14px;
-      color: #666;
+      color: var(--text-secondary);
       font-weight: 500;
     }
 
@@ -332,10 +439,10 @@
     .settings-link {
       position: absolute;
       top: 16px;
-      right: 16px;
+      right: 60px;
       width: 24px;
       height: 24px;
-      background: rgba(255, 255, 255, 0.8);
+      background: var(--control-bg);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -343,13 +450,14 @@
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
-      color: #666;
+      color: var(--text-secondary);
       font-size: 12px;
+      border: 1px solid var(--border-color);
     }
 
     .settings-link:hover {
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background: var(--input-bg);
+      box-shadow: 0 2px 8px var(--shadow-color);
     }
 
     /* Custom scrollbar */
@@ -358,17 +466,17 @@
     }
 
     #result::-webkit-scrollbar-track {
-      background: #f1f1f1;
+      background: var(--scrollbar-track);
       border-radius: 3px;
     }
 
     #result::-webkit-scrollbar-thumb {
-      background: #c1c1c1;
+      background: var(--scrollbar-thumb);
       border-radius: 3px;
     }
 
     #result::-webkit-scrollbar-thumb:hover {
-      background: #a1a1a1;
+      background: var(--scrollbar-thumb-hover);
     }
   </style>
 </head>
@@ -380,6 +488,9 @@
     <div class="header">
       <div class="logo">TL;DR Genie</div>
       <div class="tagline">AI-Powered Page Summarization</div>
+      <div class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <div class="toggle-slider"></div>
+      </div>
     </div>
 
     <div class="controls">
@@ -420,7 +531,8 @@
       <div id="result"></div>
     </div>
   </div>
-  <script src="popup.js"></script>
+
+  <script src="themeToggle.js"></script>
 </body>
 
 </html>
