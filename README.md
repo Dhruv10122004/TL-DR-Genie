@@ -2,7 +2,7 @@
 
 **TL;DR Genie** is a powerful browser extension that uses **Google's Gemini AI** to instantly summarize any webpage. Whether you're researching, studying, or just trying to quickly understand content, TL;DR Genie transforms lengthy articles into **digestible summaries tailored to your preferences**.
 
-> ⚠️ **Note:** This extension is currently available for **manual installation only**. Due to the Chrome Web Store's $5 developer registration fee, we haven't published it yet. However, you can **easily install and use it** by following the steps below!
+> ⚠️ **Note:** This extension is currently available for **manual installation only**. Due to the Chrome Web Store's $5 developer registration fee, I haven't published it yet. However, you can **easily install and use it** by following the steps below!
 
 ---
 
@@ -117,7 +117,7 @@ The extension icon should now appear in your toolbar!
 
 ## Contributing
 
-We welcome contributions! Please feel free to:
+I welcome contributions! Please feel free to:
 - Report bugs
 - Suggest new features
 - Submit pull requests
