@@ -2,7 +2,7 @@
 
 **TL;DR Genie** is a powerful browser extension that uses **Google's Gemini AI** to instantly summarize any webpage. Whether you're researching, studying, or just trying to quickly understand content, TL;DR Genie transforms lengthy articles into **digestible summaries tailored to your preferences**.
 
-> ⚠️ **Note:** This extension is currently available for **manual installation only**. Due to the Chrome Web Store's $5 developer registration fee, I haven't published it yet. However, you can **easily install and use it** by following the steps below!
+> ⚠️ **Note:** This extension is currently available for **manual installation only**. Due to the Chrome Web Store's $5 developer registration fee, we haven't published it yet. However, you can **easily install and use it** by following the steps below!
 
 ---
 
@@ -40,24 +40,74 @@
 ### Installation Steps
 
 #### 1. Clone the Repository
+
+**Choose one of these methods:**
+
+**Option A: Using Git (Recommended)**
 ```bash
 git clone https://github.com/Dhruv10122004/TL-DR-Genie.git
 cd TL-DR-Genie
 ```
 
+**Option B: Download ZIP**
+1. Go to the [TL;DR Genie repository](https://github.com/Dhruv10122004/TL-DR-Genie)
+2. Click the green **"Code"** button
+3. Select **"Download ZIP"**
+4. Extract the ZIP file to your desired location
+5. Rename the folder to `TL-DR-Genie` (remove any version suffixes)
+
+**Important**: Remember the folder location - you'll need it in step 3!
+
 #### 2. Set Up Your API Key
-- Get your **Gemini API key** from [Google AI Studio](https://aistudio.google.com/app/apikey)
-- Open Chrome and click on the **TL;DR Genie extension icon**
-- Click the **⚙️ Settings gear icon**
-- Paste your **API key** and click **Save**
+
+**Detailed API setup process:**
+
+1. **Get your Gemini API key**:
+   - Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
+   - Sign in with your Google account
+   - Click **"Create API Key"** button
+   - Copy the generated API key (keep it safe!)
+
+2. **Configure the extension**:
+   - After installing the extension (see step 3), click on the **TL;DR Genie** icon in your Chrome toolbar
+   - If you don't see the icon, click the puzzle piece (🧩) in the toolbar to find it
+   - In the extension popup, click the **⚙️ Settings** gear icon (usually in the top-right)
+   - Paste your API key in the **"API Key"** field
+   - Click **"Save"** to store your key
+
+3. **Test the setup**:
+   - Navigate to any webpage with content
+   - Click the TL;DR Genie icon
+   - Try generating a summary to ensure everything works
 
 #### 3. Load the Extension in Chrome
-1. Open Chrome and go to `chrome://extensions/`
-2. Enable **Developer mode** (toggle in the top-right corner)
-3. Click **Load unpacked**
-4. Select the `TL-DR-Genie` folder you cloned
 
-The extension icon should now appear in your toolbar!
+**Step-by-step detailed instructions:**
+
+1. **Open Google Chrome** on your computer
+
+2. **Navigate to Extensions page**:
+   - Type `chrome://extensions/` in the address bar and press Enter
+   - **OR** click the three dots menu (⋮) → More tools → Extensions
+
+3. **Enable Developer Mode**:
+   - Look for the **"Developer mode"** toggle switch in the **top-right corner** of the page
+   - Click the toggle to turn it **ON** (it should turn blue/green)
+   - You'll see new buttons appear: "Load unpacked", "Pack extension", "Update"
+
+4. **Load the Extension**:
+   - Click the **"Load unpacked"** button (appears after enabling Developer mode)
+   - A file browser window will open
+   - Navigate to and select the **`TL-DR-Genie`** folder you cloned earlier
+   - Click **"Select Folder"** (or "Open" depending on your OS)
+
+5. **Verify Installation**:
+   - The extension should now appear in your extensions list
+   - Look for the **TL;DR Genie extension icon** in your Chrome toolbar (top-right area)
+   - If you don't see it, click the puzzle piece icon (🧩) to access hidden extensions
+   - Pin the extension by clicking the pin icon next to it
+
+**✅ Success!** The extension is now installed and ready to use!
 
 ---
 
@@ -105,19 +155,51 @@ The extension icon should now appear in your toolbar!
 ## Troubleshooting
 
 ### Common Issues
-- **Extension not loading**: Make sure Developer mode is enabled in Chrome
-- **API errors**: Verify your API key is correct and has valid quota
-- **No summary generated**: Check if the webpage has readable content
 
-### Need Help?
-- Check the [Issues page](https://github.com/Dhruv10122004/TL-DR-Genie/issues) for common problems
-- Create a new issue if you encounter bugs
+**🔧 Extension not loading**
+- Make sure **Developer mode** is enabled in `chrome://extensions/`
+- Try refreshing the extensions page and reloading the extension
+- Check that you selected the correct folder (should contain `manifest.json`)
+
+**🔑 API key issues**
+- Verify your API key is correct (no extra spaces)
+- Check your Google AI Studio quota hasn't been exceeded
+- Try generating a new API key if the current one doesn't work
+
+**📄 No summary generated**
+- Ensure the webpage has readable text content
+- Try refreshing the page and attempting again
+- Check browser console for error messages (F12 → Console tab)
+
+**🧩 Extension icon not visible**
+- Click the puzzle piece icon (🧩) in your toolbar
+- Find TL;DR Genie in the dropdown
+- Click the pin icon to keep it visible in your toolbar
+
+**⚠️ Permission errors**
+- Some websites may block content extraction
+- Try the extension on different websites to test functionality
+- Ensure you're not on restricted pages (chrome://, about:, etc.)
+
+### Still Having Issues?
+
+1. **Check the Console**:
+   - Right-click on the extension icon → Inspect popup
+   - Look for error messages in the Console tab
+
+2. **Reinstall the Extension**:
+   - Remove the extension from `chrome://extensions/`
+   - Follow the installation steps again
+
+3. **Get Help**:
+   - Check the [Issues page](https://github.com/Dhruv10122004/TL-DR-Genie/issues) for similar problems
+   - Create a new issue with detailed description and error messages
 
 ---
 
 ## Contributing
 
-I welcome contributions! Please feel free to:
+We welcome contributions! Please feel free to:
 - Report bugs
 - Suggest new features
 - Submit pull requests
