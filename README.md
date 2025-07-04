@@ -39,6 +39,8 @@
 
 ### Installation Steps
 
+> **Important**: Complete these steps in order for successful installation
+
 #### 1. Clone the Repository
 
 **Choose one of these methods:**
@@ -58,7 +60,42 @@ cd TL-DR-Genie
 
 **Important**: Remember the folder location - you'll need it in step 3!
 
-#### 2. Set Up Your API Key
+#### 2. Open Chrome Extensions Page
+
+**Before installing the extension, you need to access Chrome's extensions management page:**
+
+1. **Open Google Chrome** on your computer
+2. **Navigate to Extensions page** using one of these methods:
+   - **Method 1**: Type `chrome://extensions/` in the address bar and press Enter
+   - **Method 2**: Click the three dots menu (⋮) in the top-right → More tools → Extensions
+   - **Method 3**: Click the puzzle piece icon (🧩) in the toolbar → Manage extensions
+
+You should now see the Chrome Extensions page with a list of your installed extensions.
+
+#### 3. Load the Extension in Chrome
+
+**Step-by-step detailed instructions:**
+
+1. **Enable Developer Mode**:
+   - Look for the **"Developer mode"** toggle switch in the **top-right corner** of the extensions page
+   - Click the toggle to turn it **ON** (it should turn blue/green)
+   - You'll see new buttons appear: "Load unpacked", "Pack extension", "Update"
+
+2. **Load the Extension**:
+   - Click the **"Load unpacked"** button (appears after enabling Developer mode)
+   - A file browser window will open
+   - Navigate to and select the **`TL-DR-Genie`** folder you cloned/downloaded in step 1
+   - Click **"Select Folder"** (or "Open" depending on your OS)
+
+3. **Verify Installation**:
+   - The extension should now appear in your extensions list
+   - Look for the **TL;DR Genie extension icon** in your Chrome toolbar (top-right area)
+   - If you don't see it, click the puzzle piece icon (🧩) to access hidden extensions
+   - Pin the extension by clicking the pin icon next to it
+
+**✅ Success!** The extension is now installed and ready to use!
+
+#### 4. Set Up Your API Key
 
 **Detailed API setup process:**
 
@@ -69,7 +106,7 @@ cd TL-DR-Genie
    - Copy the generated API key (keep it safe!)
 
 2. **Configure the extension**:
-   - After installing the extension (see step 3), click on the **TL;DR Genie** icon in your Chrome toolbar
+   - After installing the extension (step 3), click on the **TL;DR Genie** icon in your Chrome toolbar
    - If you don't see the icon, click the puzzle piece (🧩) in the toolbar to find it
    - In the extension popup, click the **⚙️ Settings** gear icon (usually in the top-right)
    - Paste your API key in the **"API Key"** field
